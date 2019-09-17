@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>Simon</title>
+    <title>Simon - an ode</title>
   </head>
+  <header>
+    <h1>Simon</h1>
+    <div class="display">
+      <h2>Level: <span id="level">1</span></h2>
+      <button id="start">Start</button>
+      <button id="quit">Quit</button>
+      <h3>High Score: Level <span id="high-score">1</span></h3>
+    </div>
+  </header>
   <body>
-    <header>
-      <h1>Simon</h1>
-      <h2>Level: 000</h2>
-      <button>Start</button>
-      <button>Quit</button>
-      <h3>High Score: Level 0</h3>
-    </header>
-
-    <!-- <grid>
-      <canvas id="thecanvas"> </canvas>
-    </grid> -->
+    <div class="container">
+      <div class="button" id="one">1</div>
+      <div class="button" id="two">2</div>
+      <div class="button" id="three">3</div>
+      <div class="button" id="four">4</div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

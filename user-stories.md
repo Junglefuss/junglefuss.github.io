@@ -3,11 +3,8 @@ Simon (logo)
 Circle with four quarter regions
 Scoreboard/Level counter
 
-<!-- Player count selector -->
-
 Start button
-
-<!-- Player turn indicator -->
+Quit button
 
 Sound on/off toggle
 

@@ -1,36 +1,42 @@
-grid {
-  border: 1px grey;
-  /* margin: 0; */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin: 0 15% 0 15%;
 }
 
-.box {
-  background-color: rgba(0, 128, 0);
-  opacity: 0.2;
-  width: 150px;
-  height: 150px;
-  border: 2px solid black;
+.container > div {
+  background-color: #f1f1f1;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 20px;
+  font-size: 30px;
+  line-height: 75px;
+  border: 15px solid black;
 }
 
-grid {
-  margin: 0 30% 0 30%;
+.button#one {
+  background: rgba(0, 128, 0, 0.3);
+  /* opacity: 0.2; */
+  border-top-left-radius: 275px;
 }
 
-#1 {
-  background-color: rgb(0, 128, 0);
-  opacity: 0.2;
+.button#two {
+  background-color: rgba(255, 255, 0, 0.3);
+  /* opacity: 0.2; */
+  border-top-right-radius: 275px;
 }
 
-#2 {
-  background-color: rgb(255, 255, 0);
-  opacity: 0.2;
+.button#three {
+  background-color: rgba(255, 0, 0, 0.3);
+  /* opacity: 0.2; */
+  border-bottom-left-radius: 275px;
 }
 
-#3 {
-  background-color: rgb(255, 0, 0);
-  opacity: 0.2;
-}
-
-#4 {
-  background-color: rgb(0, 0, 255);
-  opacity: 0.2;
+.button#four {
+  background-color: rgba(0, 0, 255, 0.3);
+  /* opacity: 0.2; */
+  border-bottom-right-radius: 275px;
 }
