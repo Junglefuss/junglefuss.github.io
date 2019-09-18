@@ -1,6 +1,7 @@
 // Creating the array for the game and the user:
 const buttonPattern = [];
 let userPattern = [];
+let arrayHolder = [];
 let level = 1;
 
 // Adding sounds
@@ -17,7 +18,10 @@ function randomizePattern() {
   }
 }
 randomizePattern();
-console.log(buttonPattern);
+// console.log(buttonPattern);
+let buttonPatternCopyC = [...buttonPattern];
+let buttonPatternCopyU = [...buttonPattern];
+// console.log(buttonPatternCopy);
 
 // Setting some variables for global use
 const buttons = document.querySelectorAll(".button");
@@ -61,18 +65,49 @@ function flashBlue() {
 // Starting game action
 
 // set to Start button
+// function computerTurn(n) {
+//   console.log(`n = ${n}`);
+//   if (n <= 0) {
+//     return;
+//   } else {
+//     for (let i = 0; i <= n; i++) {
+//       (function(x) {
+//         setTimeout(function() {
+//           console.log(x);
+//           // let buttonIdStr = buttonPattern[i];
+
+//           // if (buttonIdStr === "green") {
+//           //   flashGreen();
+//           // } else if (buttonIdStr === "yellow") {
+//           //   flashYellow();
+//           // } else if (buttonIdStr === "red") {
+//           //   flashRed();
+//           // } else if (buttonIdStr === "blue") {
+//           //   flashBlue();
+//           // }
+//         }, 5000);
+//       })(i);
+//     }
+//   }
+// }
+
 function computerTurn(n) {
-  level++;
-  console.log(n);
+  console.log(`Level: ${n}`);
   if (n <= 0) {
-    userPattern = [];
+    for (let i = 0; arrayHolder.length > 0; i++) {
+      let last = arrayHolder.pop();
+      buttonPatternCopyC.unshift(last);
+    }
+    console.log(buttonPatternCopyC);
+    console.log(arrayHolder);
     return;
   } else {
-    // for (let i = 0; i <= userPattern.length; i++) {
-    // let compPatternSoFar = buttonPattern.slice(0, userPattern.length + 1);
-    let x = 0;
-    let buttonIdStr = buttonPattern[x];
+    console.log(buttonPattern);
+    console.log(buttonPatternCopyC);
+
+    let buttonIdStr = buttonPatternCopyC[0];
     console.log(buttonIdStr);
+    buttonPatternCopyC.shift();
 
     if (buttonIdStr === "green") {
       flashGreen();
@@ -82,47 +117,60 @@ function computerTurn(n) {
       flashRed();
     } else if (buttonIdStr === "blue") {
       flashBlue();
-    } else return;
+    }
+    arrayHolder.push(buttonIdStr);
+    console.log(arrayHolder);
 
     setTimeout(function() {
-      x++;
       computerTurn(n - 1);
-      console.log(x);
-    }, 300);
+    }, 500);
   }
 }
-// }
 
 // Listening for user input, adding to user array
 buttonsContainer.addEventListener("click", function(evt) {
   // Play sounds and "flash" button
-  if (evt.target.id === "green") {
+  let buttonIdStr = evt.target.id;
+
+  if (buttonIdStr === "green") {
     flashGreen();
-  } else if (evt.target.id === "yellow") {
+  } else if (buttonIdStr === "yellow") {
     flashYellow();
-  } else if (evt.target.id === "red") {
+  } else if (buttonIdStr === "red") {
     flashRed();
-  } else if (evt.target.id === "blue") {
+  } else if (buttonIdStr === "blue") {
     flashBlue();
   }
-  userPattern.push(evt.target.id);
-  console.log(userPattern);
+  userPattern.push(buttonIdStr);
+  // console.log(userPattern);
+  checkContinue(userPattern);
+});
 
-  // Check continue
-  let compPatternSoFar = buttonPattern.slice(0, userPattern.length);
-  console.log(compPatternSoFar);
-  if (userPattern.length === compPatternSoFar.length) {
-    if (JSON.stringify(userPattern) !== JSON.stringify(compPatternSoFar)) {
+// Check continue
+function checkContinue(array) {
+  if (array.length === level) {
+    let compPatternPlayed = [];
+    for (let i = 0; i < array.length; i++) {
+      compPatternPlayed.push(buttonPatternCopyU.shift());
+    }
+    if (JSON.stringify(array) !== JSON.stringify(compPatternPlayed)) {
       alert("wrong!");
       // gameOver();
     } else {
+      level++;
       setTimeout(function() {
-        computerTurn(userPattern.length + 1);
+        computerTurn(level);
       }, 1000);
+      console.log(userPattern);
+      userPattern = [];
+      for (let i = 0; compPatternPlayed.length > 0; i++) {
+        let last = compPatternPlayed.pop();
+        buttonPatternCopyC.unshift(last);
+        console.log(compPatternPlayed);
+      }
     }
-    console.log(userPattern.length);
   }
-});
+}
 
 // gameOver() {
 //   ;

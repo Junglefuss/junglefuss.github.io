@@ -14,7 +14,9 @@
   padding: 20px;
   font-size: 30px;
   line-height: 75px;
-  border: 15px solid black;
+  border: 20px solid black;
+  max-width: 850px;
+  /* min-width: 600px; */
 }
 
 .button#green {
