@@ -64,36 +64,12 @@ function flashBlue() {
 
 // Starting game action
 
-// set to Start button
-// function computerTurn(n) {
-//   console.log(`n = ${n}`);
-//   if (n <= 0) {
-//     return;
-//   } else {
-//     for (let i = 0; i <= n; i++) {
-//       (function(x) {
-//         setTimeout(function() {
-//           console.log(x);
-//           // let buttonIdStr = buttonPattern[i];
-
-//           // if (buttonIdStr === "green") {
-//           //   flashGreen();
-//           // } else if (buttonIdStr === "yellow") {
-//           //   flashYellow();
-//           // } else if (buttonIdStr === "red") {
-//           //   flashRed();
-//           // } else if (buttonIdStr === "blue") {
-//           //   flashBlue();
-//           // }
-//         }, 5000);
-//       })(i);
-//     }
-//   }
-// }
+// set to Start button in html
 
 function computerTurn(n) {
   console.log(`Level: ${n}`);
   if (n <= 0) {
+    level = arrayHolder.length;
     for (let i = 0; arrayHolder.length > 0; i++) {
       let last = arrayHolder.pop();
       buttonPatternCopyC.unshift(last);
@@ -105,9 +81,8 @@ function computerTurn(n) {
     console.log(buttonPattern);
     console.log(buttonPatternCopyC);
 
-    let buttonIdStr = buttonPatternCopyC[0];
+    let buttonIdStr = buttonPatternCopyC.shift();
     console.log(buttonIdStr);
-    buttonPatternCopyC.shift();
 
     if (buttonIdStr === "green") {
       flashGreen();
@@ -162,12 +137,12 @@ function checkContinue(array) {
         computerTurn(level);
       }, 1000);
       console.log(userPattern);
-      userPattern = [];
-      for (let i = 0; compPatternPlayed.length > 0; i++) {
-        let last = compPatternPlayed.pop();
-        buttonPatternCopyC.unshift(last);
+      for (let i = 0; userPattern.length > 0; i++) {
+        let last = userPattern.pop();
+        buttonPatternCopyU.unshift(last);
         console.log(compPatternPlayed);
       }
+      console.log(userPattern);
     }
   }
 }
