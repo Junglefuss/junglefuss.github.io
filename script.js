@@ -142,6 +142,12 @@ function checkContinue(userArray) {
   }
 }
 
+function updateLevel() {
+  let levelDisplay = document.querySelector(".score");
+  console.log(levelDisplay.innerHTML);
+}
+updateLevel();
+
 function gameOver() {
   buzz.play();
   alert("Whoops! Wrong button. Click 'start' to play again.");
