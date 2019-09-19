@@ -8,15 +8,15 @@
     <title>Simon - an ode</title>
   </head>
   <header>
-    <h1><img src="./Images/logo.png" /></h1>
+    <img src="./Images/logo.png" alt="Simon logo" />
     <div>
-      <button id="start" onclick="computerTurn(1);">Start</button>
+      <button id="start" onclick="computerTurn(1);">START</button>
     </div>
-    <div class="display">
-      <!-- <h2>Level: <span id="level">1</span></h2> -->
-      <!-- <button id="quit">Quit</button> -->
-      <!-- <h3>High Score: Level <span id="high-score">1</span></h3> -->
-    </div>
+    <!-- <div class="display">
+      <h2>Level: <span id="level">1</span></h2>
+      <button id="quit">Quit</button>
+      <h3>High Score: Level <span id="high-score">1</span></h3>
+    </div> -->
   </header>
   <body>
     <div class="container">
@@ -26,11 +26,17 @@
       <div class="button" id="blue"></div>
       <div class="cutout">
         <div>
-          <span class="logo"><img src="./Images/logo_white.png" width="150px"/></span>
+          <span class="white-logo"><img src="./Images/logo_white.png"/></span>
           <span class="score">LEVEL: 001</span>
         </div>
       </div>
     </div>
+    <footer>
+      <small
+        >Simon is a registered trademark of Hasbro Games. Use does not imply sponsorship or
+        endorsement.
+      </small>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

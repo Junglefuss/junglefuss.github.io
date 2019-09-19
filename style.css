@@ -7,7 +7,7 @@ header {
   margin: 50px 0 0 50px;
 }
 
-header > h1 > img {
+header > img {
   width: 200px;
 }
 
@@ -17,94 +17,58 @@ header > h1 > img {
   border-radius: 150px;
 }
 
-/* header > div > button {
-  padding: 5px 15px 5px 15px;
-  margin: 5px 15px 5px 15px;
-  border-radius: 10%;
-} */
-
 .container {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* flex-flow: row wrap; */
   margin: 10px 15% 0 15%;
-  /*  */
   position: relative;
-  width: 600px;
-  height: 600px;
-  border: 10px solid black;
+  width: 500px;
+  height: 500px;
+  border: 20px solid black;
   border-radius: 100% 100% 100% 100%;
+  pointer-events: none;
 }
 
 .container > div,
 .donut-ring {
-  /* background-color: #f1f1f1;
-  width: 200px;
-  height: 200px;
-  margin: 0;
-  padding: 20px;
-  font-size: 30px;
-  line-height: 75px;*/
-  /* border: 20px solid black; */
-  /* max-width: 850px; 
-  /* min-width: 600px; */
-  /*  */
   position: absolute;
   width: 50%;
   height: 50%;
 }
 
 .button#green {
-  /* background: rgba(0, 128, 0, 0.3); */
-  /* opacity: 0.2; */
-  /* border-top-left-radius: 275px; */
-  /*  */
   top: 0;
   left: 0;
   background-color: rgba(0, 128, 0, 0.3);
   border-radius: 90% 0 0 0;
-  border-bottom: 15px solid black;
-  border-right: 15px solid black;
+  border-bottom: 20px solid black;
+  border-right: 20px solid black;
 }
 
 .button#red {
-  /* background-color: rgba(255, 0, 0, 0.3); */
-  /* opacity: 0.2; */
-  /* border-top-right-radius: 275px; */
-  /*  */
   top: 0;
   right: 0;
   background-color: rgba(255, 0, 0, 0.3);
-  border-radius: 0 100% 0 0;
-  border-bottom: 15px solid black;
-  border-left: 15px solid black;
+  border-radius: 0 90% 0 0;
+  border-bottom: 20px solid black;
+  border-left: 20px solid black;
 }
 
 .button#yellow {
-  /* background-color: rgba(255, 255, 0, 0.3); */
-  /* opacity: 0.2; */
-  /* border-bottom-left-radius: 275px; */
-  /*  */
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 0, 0.3);
-  border-radius: 0 0 0 100%;
-  border-right: 15px solid black;
-  border-top: 15px solid black;
+  border-radius: 0 0 0 90%;
+  border-right: 20px solid black;
+  border-top: 20px solid black;
 }
 
 .button#blue {
-  /* background-color: rgba(0, 0, 255, 0.3); */
-  /* opacity: 0.2; */
-  /* border-bottom-right-radius: 275px; */
-  /*  */
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 255, 0.3);
-  border-radius: 0 0 100% 0;
-  border-top: 15px solid black;
-  border-bottom: 15px solid black;
+  border-radius: 0 0 90% 0;
+  border-top: 20px solid black;
+  /* border-bottom: 20px solid black; */
+  border-left: 20px solid black;
 }
 
 .cutout {
@@ -117,24 +81,61 @@ header > h1 > img {
   border-radius: 50%;
   pointer-events: none;
   text-align: center;
-  vertical-align: text-bottom;
   color: white;
-  /* padding: 5px 0; */
-  /* display: flex; */
-  /* display: inline-block; */
+}
+
+.white-logo > img {
+  margin: 0 10px 30px 10px;
+  width: 200px;
+  margin: 50px 0 50px 0;
 }
 
 .score {
   text-align: center;
-  font-size: 25px;
+  font-size: 1em;
   border: 1px solid white;
-  padding: 50px;
-  width: 20px;
+  padding: 10%;
+  /* width: 200%; */
   border-radius: 50px;
-  /* display: block; */
-  /* justify-content: center; */
 }
 
-.logo {
-  margin: 30px 10px 30px 10px;
+footer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  bottom: 10px;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    /* margin: 10px 15% 0 15%;
+    position: relative; */
+    width: 300px;
+    height: 300px;
+    /* border: 20px solid black;
+    border-radius: 100% 100% 100% 100%;
+    pointer-events: none; */
+  }
+
+  .white-logo > img {
+    margin: 20px 10px 25px 10px;
+    width: 100px;
+    /* margin: 50px 0 50px 0; */
+  }
+
+  .score {
+    text-align: center;
+    font-size: 0.8em;
+    border: 1px solid white;
+    padding: 5%;
+    /* width: 200%; */
+    border-radius: 25px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  header > img {
+    width: 40%;
+  }
 }
