@@ -129,6 +129,7 @@ function checkContinue(userArray) {
     // If it is, check if they've clicked enough buttons to level up.
   } else if (tempArray.length === level) {
     level++;
+    updateLevel(level);
     userPattern = [];
     setTimeout(function() {
       computerTurn(level);
@@ -142,11 +143,13 @@ function checkContinue(userArray) {
   }
 }
 
-function updateLevel() {
+function updateLevel(level) {
   let levelDisplay = document.querySelector(".score");
   console.log(levelDisplay.innerHTML);
+  prependedScore = String(level).padStart(3, "0");
+  console.log(prependedScore);
+  levelDisplay.innerHTML = `LEVEL: ${prependedScore}`;
 }
-updateLevel();
 
 function gameOver() {
   buzz.play();
