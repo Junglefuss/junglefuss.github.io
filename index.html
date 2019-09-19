@@ -12,36 +12,33 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Simon - an ode by Jonathan Goldfuss</title>
   </head>
-  <header>
-    <img src="./Images/logo.png" alt="Simon logo" />
-    <div>
-      <button id="start" onclick="computerTurn(1);">START</button>
-    </div>
-    <!-- <div class="display">
-      <h2>Level: <span id="level">1</span></h2>
-      <button id="quit">Quit</button>
-      <h3>High Score: Level <span id="high-score">1</span></h3>
-    </div> -->
-  </header>
   <body>
-    <div class="container">
-      <div class="button" id="green"></div>
-      <div class="button" id="red"></div>
-      <div class="button" id="yellow"></div>
-      <div class="button" id="blue"></div>
-      <div class="cutout">
-        <div>
-          <span class="white-logo"><img src="./Images/logo_white.png" alt="Simon logo"/></span>
-          <span class="score">LEVEL: 001</span>
+    <header>
+      <img src="./Images/logo.png" alt="Simon logo" />
+      <div>
+        <button id="start" onclick="computerTurn(1);">START</button>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="button" id="green"></div>
+        <div class="button" id="red"></div>
+        <div class="button" id="yellow"></div>
+        <div class="button" id="blue"></div>
+        <div class="cutout">
+          <div>
+            <span class="white-logo"><img src="./Images/logo_white.png" alt="Simon logo"/></span>
+            <span class="score">LEVEL: 001</span>
+          </div>
         </div>
       </div>
-    </div>
-    <footer>
-      <small
-        >Simon is a registered trademark of Hasbro Games. Use does not imply sponsorship or
-        endorsement.
-      </small>
-    </footer>
+      <footer>
+        <small
+          >Simon is a registered trademark of Hasbro Games. Use does not imply sponsorship or
+          endorsement.
+        </small>
+      </footer>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
