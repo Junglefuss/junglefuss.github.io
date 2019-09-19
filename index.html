@@ -8,12 +8,14 @@
     <title>Simon - an ode</title>
   </head>
   <header>
-    <h1>Simon</h1>
-    <div class="display">
-      <h2>Level: <span id="level">1</span></h2>
+    <h1><img src="./Images/logo.png" /></h1>
+    <div>
       <button id="start" onclick="computerTurn(1);">Start</button>
-      <button id="quit">Quit</button>
-      <h3>High Score: Level <span id="high-score">1</span></h3>
+    </div>
+    <div class="display">
+      <!-- <h2>Level: <span id="level">1</span></h2> -->
+      <!-- <button id="quit">Quit</button> -->
+      <!-- <h3>High Score: Level <span id="high-score">1</span></h3> -->
     </div>
   </header>
   <body>
@@ -22,6 +24,12 @@
       <div class="button" id="red"></div>
       <div class="button" id="yellow"></div>
       <div class="button" id="blue"></div>
+      <div class="cutout">
+        <div>
+          <span class="logo"><img src="./Images/logo_white.png" width="150px"/></span>
+          <span class="score">LEVEL: 001</span>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
