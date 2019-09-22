@@ -19,13 +19,10 @@ function randomizePattern() {
   }
 }
 randomizePattern();
-console.log(buttonPattern);
 let buttonPatternCopyC = [...buttonPattern];
 let buttonPatternCopyU = [...buttonPattern];
 
 // Setting some variables for global use
-// const buttons = document.querySelectorAll(".button");
-// const buttonsContainer = document.querySelector(".container");
 
 const greenButton = document.querySelector("#green");
 const yellowButton = document.querySelector("#yellow");
@@ -65,7 +62,6 @@ function flashBlue() {
 // Starting game action
 // set to Start button in html
 function computerTurn(n) {
-  console.log(`Level: ${n}`);
   // Setting countdown to stop at 0.
   if (n <= 0) {
     level = arrayHolder.length;

@@ -18,17 +18,15 @@ header > img {
 }
 
 .container {
-  margin: 10px 15% 0 15%;
+  margin: 0 auto;
   position: relative;
   width: 500px;
   height: 500px;
   border: 20px solid black;
   border-radius: 100% 100% 100% 100%;
-  /* pointer-events: none; */
 }
 
-.container > div,
-.donut-ring {
+.container > div {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -145,6 +143,6 @@ footer {
 
 @media only screen and (max-width: 460px) {
   header > img {
-    width: 40%;
+    width: 50%;
   }
 }
