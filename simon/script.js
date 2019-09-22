@@ -30,6 +30,18 @@ const redButton = document.querySelector("#red");
 const blueButton = document.querySelector("#blue");
 
 // Making the buttons flash and play noise
+function flashButton(color) {
+  if (color === "green") {
+    flashGreen();
+  } else if (color === "yellow") {
+    flashYellow();
+  } else if (color === "red") {
+    flashRed();
+  } else if (color === "blue") {
+    flashBlue();
+  }
+}
+
 function flashGreen() {
   greenButton.style.backgroundColor = "rgba(0, 128, 0, 1)";
   greenSound.play();
@@ -72,15 +84,7 @@ function computerTurn(n) {
     // Otherwise, play the first button in the list.
   } else {
     let buttonIdStr = buttonPatternCopyC.shift();
-    if (buttonIdStr === "green") {
-      flashGreen();
-    } else if (buttonIdStr === "yellow") {
-      flashYellow();
-    } else if (buttonIdStr === "red") {
-      flashRed();
-    } else if (buttonIdStr === "blue") {
-      flashBlue();
-    }
+    flashButton(buttonIdStr);
     arrayHolder.push(buttonIdStr);
     // Then go on to the next...(recursively)
     setTimeout(function() {
@@ -94,16 +98,7 @@ const buttonsContainer = document.querySelector(".container");
 buttonsContainer.addEventListener("click", function(evt) {
   // Then play sounds and "flash" button each time
   let buttonIdStr = evt.target.id;
-
-  if (buttonIdStr === "green") {
-    flashGreen();
-  } else if (buttonIdStr === "yellow") {
-    flashYellow();
-  } else if (buttonIdStr === "red") {
-    flashRed();
-  } else if (buttonIdStr === "blue") {
-    flashBlue();
-  }
+  flashButton(buttonIdStr);
   // Push the clicked button id to an array
   userPattern.push(buttonIdStr);
   // ... then check if it's correct.
@@ -149,7 +144,7 @@ function updateLevel(level) {
 
 function gameOver() {
   buzz.play();
-  alert("Whoops! Wrong button. Click 'start' to play again.");
+  alert("Whoops! Wrong button. \n\nClick 'START' to play again.");
   location.reload(true);
   randomizePattern();
 }

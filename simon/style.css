@@ -36,7 +36,7 @@ header > img {
   top: 0;
   left: 0;
   background-color: rgba(0, 128, 0, 0.3);
-  border-radius: 90% 0 0 0;
+  border-radius: 92% 0 0 0;
   border-bottom: 20px solid black;
   border-right: 20px solid black;
 }
@@ -45,7 +45,7 @@ header > img {
   top: 0;
   right: 0;
   background-color: rgba(255, 0, 0, 0.3);
-  border-radius: 0 90% 0 0;
+  border-radius: 0 92% 0 0;
   border-bottom: 20px solid black;
   border-left: 20px solid black;
 }
@@ -54,7 +54,7 @@ header > img {
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 0, 0.3);
-  border-radius: 0 0 0 90%;
+  border-radius: 0 0 0 92%;
   border-right: 20px solid black;
   border-top: 20px solid black;
 }
@@ -63,7 +63,7 @@ header > img {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 255, 0.3);
-  border-radius: 0 0 90% 0;
+  border-radius: 0 0 92% 0;
   border-top: 20px solid black;
   /* border-bottom: 20px solid black; */
   border-left: 20px solid black;
