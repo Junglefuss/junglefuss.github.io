@@ -15,7 +15,7 @@ Our class assignment was to replicate one of several popular games using HTML, C
 ## Demonstration
 
 Screen shot of game rendered in browser:
-![Simon in action](/Images/simon_screen_shot.png)
+![Simon in action](Images/Simon_screen_shot.png)
 
 ## List of Features / User Stories
 
