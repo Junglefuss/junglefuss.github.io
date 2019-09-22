@@ -78,6 +78,7 @@ header > img {
   left: 25%;
   border-radius: 50%;
   pointer-events: none;
+  user-select: none;
   text-align: center;
   color: white;
 }
@@ -93,7 +94,6 @@ header > img {
   font-size: 1em;
   border: 1px solid white;
   padding: 10%;
-  /* width: 200%; */
   border-radius: 50px;
 }
 
@@ -103,6 +103,7 @@ footer {
   width: 100%;
   bottom: 10px;
   font-size: 10px;
+  user-select: none;
 }
 
 @media only screen and (max-width: 670px) {
