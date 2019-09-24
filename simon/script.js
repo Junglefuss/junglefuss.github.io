@@ -1,3 +1,5 @@
+// HC: I can see that you refactored the code based on the feedback given during the presentation! Great work!
+
 // Creating the array for the game and the user:
 const buttonPattern = [];
 let userPattern = [];
@@ -5,15 +7,15 @@ let arrayHolder = [];
 let level = 1;
 
 // Adding sounds
-const greenSound = new Audio("./sound/green.mp3");
-const yellowSound = new Audio("./sound/yellow.mp3");
-const redSound = new Audio("./sound/red.mp3");
-const blueSound = new Audio("./sound/blue.mp3");
-const buzz = new Audio("./sound/buzz.mp3");
+const greenSound = new Audio('./sound/green.mp3');
+const yellowSound = new Audio('./sound/yellow.mp3');
+const redSound = new Audio('./sound/red.mp3');
+const blueSound = new Audio('./sound/blue.mp3');
+const buzz = new Audio('./sound/buzz.mp3');
 
 // Randomizing the buttonPattern() function so game is different every time
 function randomizePattern() {
-  let buttons = ["green", "yellow", "red", "blue"];
+  let buttons = ['green', 'yellow', 'red', 'blue'];
   for (let i = 0; i < 100; i++) {
     buttonPattern.push(buttons[Math.floor(Math.random() * buttons.length)]);
   }
@@ -24,51 +26,30 @@ let buttonPatternCopyU = [...buttonPattern];
 
 // Setting some variables for global use
 
-const greenButton = document.querySelector("#green");
-const yellowButton = document.querySelector("#yellow");
-const redButton = document.querySelector("#red");
-const blueButton = document.querySelector("#blue");
+const greenButton = document.querySelector('#green');
+const yellowButton = document.querySelector('#yellow');
+const redButton = document.querySelector('#red');
+const blueButton = document.querySelector('#blue');
 
+// HC: Here’s how we could refactor into a single function
+function flashButtonHelper(colorLight, button, sound) {
+  button.style.backgroundColor = 'rgba(0, 128, 0, 1)';
+  sound.play();
+  setTimeout(function() {
+    button.style.backgroundColor = colorLight;
+  }, 300);
+}
 // Making the buttons flash and play noise
 function flashButton(color) {
-  if (color === "green") {
-    flashGreen();
-  } else if (color === "yellow") {
-    flashYellow();
-  } else if (color === "red") {
-    flashRed();
-  } else if (color === "blue") {
-    flashBlue();
+  if (color === 'green') {
+    flashButtonHelper('rgba(0, 128, 0, 0.3)', greenButton, greenSound);
+  } else if (color === 'yellow') {
+    flashButtonHelper('rgba(255, 255, 0, 0.3)', yellowButton, yellowSound);
+  } else if (color === 'red') {
+    flashButtonHelper('rgba(255, 0, 0, 0.3)', redButton, redSound);
+  } else if (color === 'blue') {
+    flashButtonHelper('rgba(0, 0, 255, 0.3)', blueButton, blueSound);
   }
-}
-
-function flashGreen() {
-  greenButton.style.backgroundColor = "rgba(0, 128, 0, 1)";
-  greenSound.play();
-  setTimeout(function() {
-    greenButton.style.backgroundColor = "rgba(0, 128, 0, 0.3)";
-  }, 300);
-}
-function flashYellow() {
-  yellowButton.style.backgroundColor = "rgba(255, 255, 0, 1)";
-  yellowSound.play();
-  setTimeout(function() {
-    yellowButton.style.backgroundColor = "rgba(255, 255, 0, 0.3)";
-  }, 300);
-}
-function flashRed() {
-  redButton.style.backgroundColor = "rgba(255, 0, 0, 1)";
-  redSound.play();
-  setTimeout(function() {
-    redButton.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
-  }, 300);
-}
-function flashBlue() {
-  blueButton.style.backgroundColor = "rgba(0, 0, 255, 1)";
-  blueSound.play();
-  setTimeout(function() {
-    blueButton.style.backgroundColor = "rgba(0, 0, 255, 0.3)";
-  }, 300);
 }
 
 // Starting game action
@@ -87,6 +68,7 @@ function computerTurn(n) {
     flashButton(buttonIdStr);
     arrayHolder.push(buttonIdStr);
     // Then go on to the next...(recursively)
+    // HC: nice work implementing this recursive function!
     setTimeout(function() {
       computerTurn(n - 1);
     }, 500);
@@ -94,8 +76,8 @@ function computerTurn(n) {
 }
 
 // Listening for user click...
-const buttonsContainer = document.querySelector(".container");
-buttonsContainer.addEventListener("click", function(evt) {
+const buttonsContainer = document.querySelector('.container');
+buttonsContainer.addEventListener('click', function(evt) {
   // Then play sounds and "flash" button each time
   let buttonIdStr = evt.target.id;
   flashButton(buttonIdStr);
@@ -107,6 +89,7 @@ buttonsContainer.addEventListener("click", function(evt) {
 
 // Check continue
 function checkContinue(userArray) {
+  // HC: - nice job using the spread operator to make a copy of the array!
   let tempArray = [...userArray];
   let compPatternPlayed = [];
   // Push the computer order (so far) into an array...
@@ -135,9 +118,10 @@ function checkContinue(userArray) {
 }
 
 function updateLevel(level) {
-  let levelDisplay = document.querySelector(".score");
+  let levelDisplay = document.querySelector('.score');
+  // HC: remove any console.log calls that you used during debugging and don’t need anymore
   console.log(levelDisplay.innerHTML);
-  prependedScore = String(level).padStart(3, "0");
+  prependedScore = String(level).padStart(3, '0');
   console.log(prependedScore);
   levelDisplay.innerHTML = `LEVEL: ${prependedScore}`;
 }
